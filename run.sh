@@ -24,6 +24,12 @@ if ! command -v VBoxManage &> /dev/null; then
     exit 1
 fi
 
+if ! command -v wget &> /dev/null; then
+    echo "Dependency wget is not installed"
+    echo "Please install wget"
+    exit 1
+fi
+
 # Check and download
 if [ ! -f "$FULL_PATH" ]; then
     echo "File not found at $FULL_PATH. Downloading..."
